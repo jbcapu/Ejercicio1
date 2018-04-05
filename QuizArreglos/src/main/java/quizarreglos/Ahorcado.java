@@ -10,10 +10,40 @@ package quizarreglos;
  * @author steve-urbit
  */
 public class Ahorcado {
+    
     public static char[] resultadoJugada(char[] palabraOriginal, char letra){
-        return null;
+        
+        char[] miArreglo= new char [palabraOriginal.length];
+        
+        for (int i = 0; i < palabraOriginal.length ; i++) {
+            
+            if (palabraOriginal[i] == letra){
+              
+                miArreglo[i]=palabraOriginal[i];
+                
+            }else{
+                
+                miArreglo[i]='_';
+            }
+            
+        }
+        
+        return miArreglo;
     }
+    
     public static boolean validarJugada(char[] jugadasAnteriores, char[] nuevaJugada){
-        return false;
+        
+        for (int i = 0; i < jugadasAnteriores.length; i++) {
+            
+            if (nuevaJugada[i]!='_' && nuevaJugada[i]!=jugadasAnteriores[i]){
+                return true;
+            }
+                
+            }
+              return false;   
+            }
+        
+       
     }
-}
+
+
